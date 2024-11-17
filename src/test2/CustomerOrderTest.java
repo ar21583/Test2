@@ -44,6 +44,11 @@ public class CustomerOrderTest {
   //Task 4
 	// ToDo: Test low stock alert
 	// Reduce the stock of an item and verify that the system triggers a low stock alert when the quantity falls below the threshold.
+    @Test
+	public void testLowStockAlert() {
+	    inventory.updateStock("Garlic Bread", 13);  // Only 2 left after this
+	    assertTrue(inventory.isLowStock("Garlic Bread"));
+	}
 
   //Task 5
 	// ToDo: Test order status updates
